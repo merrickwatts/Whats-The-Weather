@@ -14,28 +14,88 @@
     </section>
 
     <div class="dashboard">
-                <div class="row-1">
+        <div class="row-1">
+                    <!-- Search card -->
                     <div class="city-section">
                         <h2>Search for a City:</h2>
-                        <input type="search" class="city-search" id="city-search">
-                        <button type="button" class="search btn" id="search">Search</button>
+                        <div class="search-card-info" >
+                            <input type="search" class="city-search" id="city-search" placeholder="City Name">
+                            <input type="search" class="state-search" id="state-search" placeholder="State">
+                            <button type="button" class="search btn" id="search" onclick="searchCity()">Search</button>
+                            <div class="loading hidden" id="loading"></div>
+                        </div>
                     </div>
+                    <!-- City history section -->
                     <div class="history-section">
                         <ul class="search-histoy" id="search-history">
-
+                            <li class="history-item hidden" id="history-item-0" onclick="formatWeatherData(searchHistory[0])"></li>
+                            <li class="history-item hidden" id="history-item-1" onclick="formatWeatherData(searchHistory[1])"></li>
+                            <li class="history-item hidden" id="history-item-2" onclick="formatWeatherData(searchHistory[2])"></li>
+                            <li class="history-item hidden" id="history-item-3" onclick="formatWeatherData(searchHistory[3])"></li>
+                            <li class="history-item hidden" id="history-item-4" onclick="formatWeatherData(searchHistory[4])"></li>
+                            <li class="history-item hidden" id="history-item-5" onclick="formatWeatherData(searchHistory[5])"></li>
                         </ul>
                     </div>
                 </div>
                 <div class="row-2">
+                    <!-- todays weather -->
                     <div class="today-section">
-
+                        <div class="today-title">
+                            <img class="today-icon" id="today-icon" src="">
+                            <h2 class="title" id="today-title"></h2>
+                            <img class="today-icon" id="today-icon-1" src="">
+                        </div>
+                        <div class="today-info">
+                            <h3 id="today-temp"></h3>
+                            <h3 id="today-wind"></h3>
+                            <h3 id="today-hum"></h3>
+                            <h3 id="today-uvi"></h3>
+                        </div>
                     </div>
+                    <!-- this weeks weather -->
                     <div class="week-section">
-
+                        <h2>5 Day Forecast</h2>
+                        <div class="weekly-forecast">
+                            <div class="weekly-card thunderstorm" id="weekly-card-0">
+                                <h3 class="weekly-date-0" id="weekly-date-0"></h3>
+                                <img class="weekly-icon-0" id="weekly-icon-0" src="http://openweathermap.org/img/wn/10d@2x.png">
+                                <h3 class="weekly-temp-0" id="weekly-temp-0"></h3>
+                                <h3 class="weekly-wind-0" id="weekly-wind-0"></h3>
+                                <h3 class="weekly-hum-0" id="weekly-hum-0"></h3>
+                            </div>
+                            <div class="weekly-card thunderstorm" id="weekly-card-1">
+                                <h3 class="weekly-date-1" id="weekly-date-1"></h3>
+                                <img class="weekly-icon-1" id="weekly-icon-1" src="http://openweathermap.org/img/wn/10d@2x.png">
+                                <h3 class="weekly-temp-1" id="weekly-temp-1"></h3>
+                                <h3 class="weekly-wind-1" id="weekly-wind-1"></h3>
+                                <h3 class="weekly-hum-1" id="weekly-hum-1"></h3>
+                            </div>
+                            <div class="weekly-card thunderstorm" id="weekly-card-2">
+                                <h3 class="weekly-date-2" id="weekly-date-2"></h3>
+                                <img class="weekly-icon-2" id="weekly-icon-2" src="http://openweathermap.org/img/wn/10d@2x.png">
+                                <h3 class="weekly-temp-2" id="weekly-temp-2"></h3>
+                                <h3 class="weekly-wind-2" id="weekly-wind-2"></h3>
+                                <h3 class="weekly-hum-2" id="weekly-hum-2"></h3>
+                            </div>
+                            <div class="weekly-card thunderstorm" id="weekly-card-3">
+                                <h3 class="weekly-date-3" id="weekly-date-3"></h3>
+                                <img class="weekly-icon-3" id="weekly-icon-3" src="http://openweathermap.org/img/wn/10d@2x.png">
+                                <h3 class="weekly-temp-3" id="weekly-temp-3"></h3>
+                                <h3 class="weekly-wind-3" id="weekly-wind-3"></h3>
+                                <h3 class="weekly-hum-3" id="weekly-hum-3"></h3>
+                            </div>
+                            <div class="weekly-card thunderstorm" id="weekly-card-4">
+                                <h3 class="weekly-date-4" id="weekly-date-4"></h3>
+                                <img class="weekly-icon-4" id="weekly-icon-4" src="http://openweathermap.org/img/wn/10d@2x.png">
+                                <h3 class="weekly-temp-4" id="weekly-temp-4"></h3>
+                                <h3 class="weekly-wind-4" id="weekly-wind-4"></h3>
+                                <h3 class="weekly-hum-4" id="weekly-hum-4"></h3>
+                            </div>
+                        </div>
                     </div>
                 </div>
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
     <script src="./assets/script.js"></script>
 </body>
 </html>

@@ -19,6 +19,7 @@ h1 {
 
 h2{
     font-size: x-large;
+    position: relative;
 }
 
 body {
@@ -36,7 +37,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     height: 100%;
-    width: 35%;
+    width: 25%;
 
 }
 .row-2 {
@@ -44,9 +45,9 @@ body {
     flex-direction: column;
     justify-content: space-around;
     height: 100%;
-    width: 70%;
+    width: 75%;
 }
-
+/*=====================================================================================================*/
 h2 {
     margin-bottom: 0;
     text-align: center;
@@ -69,7 +70,15 @@ h2 {
 .city-search {
     border: rgb(155, 155, 155);
     padding: 6px 10px;
-    width: 100%;
+    width: 65%;
+    height: 25%;
+    margin: 2.5% 0;
+}
+
+.state-search {
+    border: rgb(155, 155, 155);
+    padding: 6px 10px;
+    width: 25%;
     height: 25%;
     margin: 2.5% 0;
 }
@@ -89,6 +98,45 @@ h2 {
     justify-content: space-evenly;
 }
 
+.search-card-info {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }  
+
+.loading::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border: 10px solid #dddddd;
+  border-top-color: rgba(70, 70, 255, .8);
+  border-radius: 50%;
+  transform: rotate(0.16turn);
+  animation: loading 1s ease infinite;
+}
+
+@keyframes loading {
+    from {
+      transform: rotate(0turn);
+    }
+    
+    to {
+      transform: rotate(1turn);
+    }
+  }
+
+.hidden {
+    display: none;
+}
+/*=====================================================================================================*/
 .history-section {
     margin: 10px auto;
     padding: 10px;
@@ -97,7 +145,51 @@ h2 {
     background-color: rgba(155, 155, 155, .25);
 }
 
+.history-item {
+    font-size: 20px;
+    background-color: rgba(155, 155, 155, .25);
+    list-style: none;
+    text-align: center;
+    padding: 5%;
+    margin: 2% 0;
+}
+
+.history-item:hover {
+    font-size: 22px;
+    border: 2px solid black;
+    background-color: rgba(180, 180, 180, 0.8);
+    box-shadow: 3px 3px rgba(70, 70, 255, .8);
+}
+/*=====================================================================================================*/
 .today-section{
+    margin: 10px auto;
+    padding: 0 10px 10px 10px;
+    height: 45%;
+    width: 95%;
+    background-color: rgba(155, 155, 155, .25);
+}
+.today-title {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    border-bottom: 2px solid black;
+}
+
+.title {
+    font-size: 40px;
+    border: none;
+}
+
+.today-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px 5%;
+    height: 65%;
+}
+
+/*=====================================================================================================*/
+.week-section {
     margin: 10px auto;
     padding: 10px;
     height: 45%;
@@ -105,10 +197,52 @@ h2 {
     background-color: rgba(155, 155, 155, .25);
 }
 
-.week-section {
-    margin: 10px auto;
+.weekly-forecast {
+    padding: 2.5% 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.weekly-card {
+    width: 16%;
+    height: 30vh;
     padding: 10px;
-    height: 45%;
-    width: 95%;
-    background-color: rgba(155, 155, 155, .25);
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.weekly-icon {
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    text-shadow: 2px 2px #dddddd;
+}
+
+.thunderstorm {
+    color: #dddddd;
+    background-image: linear-gradient(to right bottom, rgba(44, 44, 44), rgb(70, 70, 70));
+}
+
+.drizzle {
+    color: black;
+    background-image: linear-gradient(to right bottom, rgb(105, 105, 105), rgba(3, 137, 255, 0.658));
+}
+
+.rain {
+    color: #dddddd;
+    background-image: linear-gradient(to bottom, rgb(105, 105, 105), rgba(50, 68, 83, 0.658));
+}
+
+.snow {
+    color: black;
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(61, 73, 83, 0.658));
+}
+
+.clear {
+    color: black;
+    background-image: linear-gradient(to right bottom, rgba(255, 255, 132, .25), rgba(3, 137, 255, 0.925));
 }
