@@ -123,7 +123,7 @@ function getAbb (input) {
 
 const getPossition = async (city, stateCode) => {
     if (city !== "" && stateCode !== "") {
-        var url = 'http://api.openweathermap.org/geo/1.0/direct?q=' + city + ',' + stateCode + ',us&limit=1&appid=4fe229b724f6cf4ed9ef27910aac4786&units=imperial';
+        var url = 'https://api.openweathermap.org/geo/1.0/direct?q=' + city + ',' + stateCode + ',us&limit=1&appid=4fe229b724f6cf4ed9ef27910aac4786&units=imperial';
         let response = await fetch(url);
         return await response.json();    
     }else {
@@ -199,7 +199,7 @@ function WeatherInfo(name, date, lat, lon, currentId, currentIcon, currentTemp, 
 
 function formatWeatherData (data) {
     if(data !== 0) {
-        let tURL = "http://openweathermap.org/img/wn/" + data.currentIcon + "@2x.png"
+        let tURL = "https://openweathermap.org/img/wn/" + data.currentIcon + "@2x.png"
         todayIcon.src = tURL;
         todayIcon1.src = tURL;
         let tTitle = data.name + ' - ' + moment.unix(data.date).format('L')
