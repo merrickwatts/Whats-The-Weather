@@ -254,4 +254,3 @@ function formatWeatherData (data) {
     }
     
 }
-
